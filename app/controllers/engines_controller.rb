@@ -1,11 +1,14 @@
 class EnginesController < ApplicationController
+  
     def index
-        #TODO get all enignes from database
-        render component: 'Engines'
+        engines = Engine.all
+        render component: 'Engines', props: {engines: engines}
     end
 
     def show
         #TODO get one enigne from database
         render component: 'Engine'
     end
+
+
 end
